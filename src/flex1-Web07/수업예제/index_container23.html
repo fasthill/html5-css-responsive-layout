@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex개념_container</title>
+    <style>
+          *{padding: 0; margin: 0;}
+          .container{
+               background-color: bisque;
+               display: flex;
+               flex-direction: row; 
+               justify-content:space-around;/
+               /*item의 줄을 바꿀때 사용하게 됨 -  
+               공간이 없을 경우 다음줄로 이동 (역방향/반대로,reverse)*/
+               /* flex-flow : flex-direction + flex-wrap*/
+            }
+
+          .container2 {
+            background-color: #ff9486;
+            display: flex;
+            height: 50vh; 
+            /*수직축상의 item을 정렬하는 방법/ 한줄일때 사용*/
+            align-items: stretch;/*높이를 꽉채우며 표현-기본값*/
+            align-items: center; /*중앙에 배치- 많이 사용!*/ 
+        }
+
+          .container3 {
+            background-color: blue;
+            display: flex;
+            height: 50vh;
+             /*수직축상 item을 정렬하는 방법/ 두줄이상 사용 */
+            width: 60vw;
+            flex-wrap: wrap;
+            align-content:center; /*stretch-기본값
+             justify-content(값동일)*/
+        }
+          .item{ 
+              background-color: aquamarine;
+              border: 1px solid #000; 
+              margin: 5px;   
+          }
+
+          .item2{ 
+              padding: 10px;
+              background-color: aquamarine;
+              border: 2px solid #000; 
+              margin: 15px;   
+          }
+
+          .item3{ 
+              background-color: aquamarine;
+              border: 1px solid #000; 
+              margin: 5px;   
+          }
+    </style>
+</head>
+<body>
+        <!--2) flex-wrap : flex_container의 크기 기준 변동이 
+            있을 경우 item들을 어떻게 보일지 결정   
+            nowrap 기본값 (한줄!)
+         -->
+         <div class="container">
+              <div class="item">flex_AA</div>
+              <div class="item">flex_BB</div>
+              <div class="item">flex_CC</div>
+              <div class="item">flex_DDD</div>
+              <div class="item">flex_EEE</div>
+              <div class="item">flex_FFF</div>
+         </div>
+
+
+    <div class="container2">
+        <div class="item2">flex_AAn</div>
+        <div class="item2">flex_BBn</div>
+        <div class="item2">flex_CCn</div>
+    </div>
+
+    <div class="container3">
+        <div class="item">flex_AA</div>
+        <div class="item">flex_BB</div>
+        <div class="item">flex_CC</div>
+        <div class="item">flex_DD</div>
+        <div class="item">flex_EE</div>
+        <div class="item">flex_FF</div>
+    </div>
+
+</body>
+</html>
